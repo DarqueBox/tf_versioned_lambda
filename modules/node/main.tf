@@ -24,10 +24,8 @@ resource "aws_lambda_function" "lambda" {
   memory_size       = "${var.memory_size}"
   timeout           = "${var.timeout}"
 
-  /* not working
-      vpc_config = {
-        subnet_ids         = "${var.vpc_subnet_ids}"
-        security_group_ids = "${var.vpc_security_group_ids}"
-      }
-      */
+  vpc_config = {
+    subnet_ids         = "${var.vpc_subnet_ids}"
+    security_group_ids = "${var.vpc_security_group_ids}"
+  }
 }
